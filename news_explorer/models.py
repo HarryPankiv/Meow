@@ -8,3 +8,10 @@ class Article(models.Model):
     url = models.URLField(max_length=200)
     url_to_image = models.URLField(max_length=200)
     publish_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.title
+
+    @staticmethod
+    def get_all_articles():
+        return Article.objects.all()
