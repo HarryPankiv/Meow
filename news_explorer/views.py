@@ -24,11 +24,13 @@ def populate_db():
                           url=each_article['url'],
                           url_to_image=each_article['urlToImage'],
                           publish_date=each_article['publishedAt'])
+        """
         try:
             article.save()
         except:
-            print "fuck"
-            return HttpResponse(status=403)
+            print article
+        """
+        article.save()
     return HttpResponse(status=200)
 
 
