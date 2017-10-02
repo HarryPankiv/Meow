@@ -17,4 +17,4 @@ def start_page(request):
     context = {
         'rooms': "dota",
     }
-    return render(request, 'news_explorer/main.html', context)
+    return render(request, 'news_explorer/default.html', context)
