@@ -51,7 +51,13 @@
                            background-position: center;">
                     <div class="header article-text-header article-text-color">{{ article.title }}</div>
                     <div class="meta">
-                        <span class="category article-text-category article-text-color">Category...</span>
+                        <span class="category article-text-category article-text-color">
+                            {% if article.tag == 'bbc-news' %} News {% endif %}
+                            {% if article.tag == 'bbc-sport' %} Sport {% endif %}
+                            {% if article.tag == 'tech' %} Tech {% endif %}
+                            {% if article.tag == 'mtv-news' %} Music {% endif %}
+
+                        </span>
                     </div>
                     <!-- <img src="" /> -->
                     <div class="description article-text-main article-text-color">
