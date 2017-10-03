@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Meow</title>
+    <link rel="stylesheet" type="text/css" href="{% static "src/css/style.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "src/css/semantic.min.css" %}">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="{% static "src/js/semantic.min.js" %}"></script>
+    <script src="static/src/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<div class="ui secondary pointing stackable menu">
+    <div class="right menu">
+
+        <a class="item {% if page == 'home' %} active {% endif %}" href="/">
+            home
+        </a>
+        <a class="item {% if page == 'news' %} active {% endif %}" href="/news/">
+            news
+        </a>
+        <a class="item {% if page == 'tech' %} active {% endif %}" href="/tech/">
+            tech
+        </a>
+        <a class="item {% if page == 'sport' %} active {% endif %}" href="/sport/">
+            sport
+        </a>
+        <a class="item {% if page == 'music' %} active {% endif %}" href="/music/">
+            music
+        </a>
+    </div>
+</div>
+
+
+<div class="ui stackable grid">
+    {% for article in articles %}
+        <div class="five wide column news-article">
+            <div class="ui raised link card">
+                <a class="content" href="{{ article.url }}"
+                   style="
+                           background-image: url('{{ article.url_to_image }}');
+                           background-size: 110%;
+                           background-size: cover;
+                           background-position: center;">
+                    <div class="header article-text-header article-text-color">{{ article.title }}</div>
+                    <div class="meta">
+                        <span class="category article-text-category article-text-color">Category...</span>
+                    </div>
+                    <!-- <img src="" /> -->
+                    <div class="description article-text-main article-text-color">
+                        <p>{{ article.description }}</p>
+                    </div>
+
+                    <div class="extra content">
+                        <div class="right article-texdt-source floated author">
+                            {{ article.author }}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+</body>
+</html>
