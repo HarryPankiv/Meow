@@ -35,23 +35,21 @@
     </div>
 </div>
 
-<div class="news-title">here can be your advertisement</div>
-
 
 <div class="ui grid">
     {% for article in articles %}
-        <div class="four wide column news-article" >
+        <div class="five wide column news-article" >
             <div class="ui raised link card">
                 <a class="content" href="{{ article.url }}"
                    style="
                            background-image: url('{{ article.url_to_image }}');
                            background-size: 110%;">
-                    <div class="header">{{ article.title }}</div>
+                    <div class="header article-text-color">{{ article.title }}</div>
                     <div class="meta">
-                        <span class="category">Category...</span>
+                        <span class="category article-text-color">Category...</span>
                     </div>
                     <!-- <img src="" /> -->
-                    <div class="description">
+                    <div class="description article-text-color">
                         <p>{{ article.description }}</p>
                     </div>
 
