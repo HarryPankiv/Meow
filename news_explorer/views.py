@@ -3,7 +3,6 @@ from django.shortcuts import render_to_response
 import urllib2
 from .models import Article
 from django.db import IntegrityError
-#from .forms import RoomForm
 from django.shortcuts import redirect
 from django.http import HttpResponse
 
@@ -56,6 +55,8 @@ def start_page(request):
         'articles': articles,
         'page': 'home'
     }
+    print 'on server'
+    print articles[0]
     return render(request, 'news_explorer/default.html', context)
 
 def music_page(request):
