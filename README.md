@@ -11,3 +11,7 @@ Meow is favourite word of favourite animal of our programming teacher. It has no
   - in console run "python manage.py runserver"
   - go to 'localhost:8000' in your browser
   - magic!
+
+![Alt text](https://i.imgur.com/1viiSFy.jpg "Optional title")
+
+![Alt text](https://i.imgur.com/J0m8mQ5.jpg "Optional title")
