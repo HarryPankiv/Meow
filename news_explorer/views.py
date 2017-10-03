@@ -55,8 +55,6 @@ def start_page(request):
         'articles': articles,
         'page': 'home'
     }
-    print 'on server'
-    print articles[0]
     return render(request, 'news_explorer/default.html', context)
 
 def music_page(request):
