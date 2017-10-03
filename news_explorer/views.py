@@ -53,7 +53,7 @@ def start_page(request):
     populate_db()
     articles = Article.get_all_articles()
     context = {
-        'articles': articles,
+        'articles': articles[:21],
         'page': 'home'
     }
     return render(request, 'news_explorer/default.html', context)
@@ -61,7 +61,7 @@ def start_page(request):
 def music_page(request):
     articles = Article.objects.filter(tag='mtv-news')
     context = {
-        'articles': articles,
+        'articles': articles[:21],
         'page': 'music'
     }
     return render(request, 'news_explorer/default.html', context)
@@ -70,7 +70,7 @@ def music_page(request):
 def news_page(request):
     articles = Article.objects.filter(tag='bbc-news')
     context = {
-        'articles': articles,
+        'articles': articles[:21],
         'page': 'news'
     }
     return render(request, 'news_explorer/default.html', context)
@@ -79,7 +79,7 @@ def news_page(request):
 def sport_page(request):
     articles = Article.objects.filter(tag='bbc-sport')
     context = {
-        'articles': articles,
+        'articles': articles[:21],
         'page': 'sport'
     }
     return render(request, 'news_explorer/default.html', context)
@@ -87,7 +87,7 @@ def sport_page(request):
 def tech_page(request):
     articles = Article.objects.filter(tag='tech')
     context = {
-        'articles': articles,
+        'articles': articles[:21],
         'page': 'tech'
     }
     return render(request, 'news_explorer/default.html', context)
