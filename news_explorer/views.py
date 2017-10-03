@@ -54,6 +54,7 @@ def start_page(request):
     articles = Article.get_all_articles()
     context = {
         'articles': articles,
+        'page': 'home'
     }
     return render(request, 'news_explorer/default.html', context)
 
@@ -61,6 +62,7 @@ def music_page(request):
     articles = Article.objects.filter(tag='mtv-news')
     context = {
         'articles': articles,
+        'page': 'music'
     }
     return render(request, 'news_explorer/default.html', context)
 

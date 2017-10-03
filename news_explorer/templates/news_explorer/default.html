@@ -18,7 +18,8 @@
 
 <div class="ui secondary pointing menu">
     <div class="right menu">
-        <a class="item active" >
+
+        <a class="item {% if page == 'home' %} active {% endif %}">
             home
         </a>
         <a class="item">
@@ -30,7 +31,7 @@
         <a class="item">
             sport
         </a>
-        <a class="item" href="/music/">
+        <a class="item {% if page == 'music' %} active {% endif %}" href="/music/">
             music
         </a>
     </div>
@@ -39,7 +40,7 @@
 
 <div class="ui grid">
     {% for article in articles %}
-        <div class="five wide column news-article" >
+        <div class="five wide column news-article">
             <div class="ui raised link card">
                 <a class="content" href="{{ article.url }}"
                    style="
