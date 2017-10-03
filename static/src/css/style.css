@@ -1,12 +1,6 @@
 .news-article {
-}
-
-.a {
-  transition: all 0.3s;
-}
-
-.a:hover {
-  transform: scale(1.1);
+    padding-left: 0% !important;
+    width: 100% !important;
 }
 
 .header-text {
