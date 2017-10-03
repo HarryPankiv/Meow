@@ -37,8 +37,8 @@ def populate_db():
 
     urls = {
         'https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=bd83f8731650444684b1c3f7797f582a': 'bbc-news',
-        'https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=bd83f8731650444684b1c3f7797f582a': 'bbc-sports',
-        #'https://newsapi.org/v1/articles?source=hacker-news&sortBy=top&apiKey=bd83f8731650444684b1c3f7797f582a': 'hacker-news',
+        'https://newsapi.org/v1/articles?source=bbc-sport&sortBy=top&apiKey=bd83f8731650444684b1c3f7797f582a': 'bbc-sport',
+        'https://newsapi.org/v1/articles?source=engadget&sortBy=top&apiKey=a4f9437eb9e148d0b7a0f059ec008a39': 'tech',
         'https://newsapi.org/v1/articles?source=mtv-news&sortBy=top&apiKey=bd83f8731650444684b1c3f7797f582a': 'mtv-news'
     }
 
@@ -65,4 +65,32 @@ def music_page(request):
         'page': 'music'
     }
     return render(request, 'news_explorer/default.html', context)
+
+
+def news_page(request):
+    articles = Article.objects.filter(tag='bbc-news')
+    context = {
+        'articles': articles,
+        'page': 'news'
+    }
+    return render(request, 'news_explorer/default.html', context)
+
+
+def sport_page(request):
+    articles = Article.objects.filter(tag='bbc-sport')
+    context = {
+        'articles': articles,
+        'page': 'sport'
+    }
+    return render(request, 'news_explorer/default.html', context)
+
+def tech_page(request):
+    articles = Article.objects.filter(tag='tech')
+    context = {
+        'articles': articles,
+        'page': 'tech'
+    }
+    return render(request, 'news_explorer/default.html', context)
+
+
 
