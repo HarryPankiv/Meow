@@ -11,12 +11,13 @@
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
     <script src="{% static "src/js/semantic.min.js" %}"></script>
+    <script src="static/src/js/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 
-<div class="ui secondary pointing menu">
+<div class="ui secondary pointing stackable menu">
     <div class="right menu">
 
         <a class="item {% if page == 'home' %} active {% endif %}">
@@ -38,7 +39,7 @@
 </div>
 
 
-<div class="ui grid">
+<div class="ui stackable grid">
     {% for article in articles %}
         <div class="five wide column news-article">
             <div class="ui raised link card">
@@ -46,17 +47,17 @@
                    style="
                            background-image: url('{{ article.url_to_image }}');
                            background-size: 110%;">
-                    <div class="header article-text-color">{{ article.title }}</div>
+                    <div class="header article-text-header article-text-color">{{ article.title }}</div>
                     <div class="meta">
-                        <span class="category article-text-color">Category...</span>
+                        <span class="category article-text-category article-text-color">Category...</span>
                     </div>
                     <!-- <img src="" /> -->
-                    <div class="description article-text-color">
+                    <div class="description article-text-main article-text-color">
                         <p>{{ article.description }}</p>
                     </div>
 
                     <div class="extra content">
-                        <div class="right floated author">
+                        <div class="right article-texdt-source floated author">
                             {{ article.author }}
                         </div>
                     </div>
