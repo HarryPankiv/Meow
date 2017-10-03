@@ -30,3 +30,7 @@
   text-decoration: none;
   margin: 10px;
 }
+
+.news-article {
+  padding: 25px 25px !important;
+}
