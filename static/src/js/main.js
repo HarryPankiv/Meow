@@ -4,6 +4,7 @@ $(document).ready(function() {
   }, 10000);
 });
 
+
 function cache_clear() {
   window.location.reload(true);
 }
