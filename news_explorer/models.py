@@ -8,6 +8,7 @@ class Article(models.Model):
     url = models.URLField(max_length=200, unique=True)
     url_to_image = models.URLField(max_length=200)
     publish_date = models.DateTimeField(null=True)
+    tag = models.CharField(default='bbc-news', max_length=20)
 
     def __str__(self):
         return self.title
