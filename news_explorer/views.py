@@ -31,6 +31,8 @@ def populate_db():
             print article
         """
         article.save()
+
+
     return HttpResponse(status=200)
 
 
@@ -39,8 +41,9 @@ def populate_db():
 
 def start_page(request):
     populate_db()
+    articles = Article.get_all_articles()
     context = {
-        'rooms': "dota",
+        'articles': articles,
     }
     return render(request, 'news_explorer/default.html', context)
 
