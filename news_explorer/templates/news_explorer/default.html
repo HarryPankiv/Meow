@@ -6,6 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
 <body>
+
 	<ul class="nav-container">
 		<li class="nav-item">home</li>
 		<li class="nav-item">news</li>
@@ -15,11 +16,10 @@
 	</ul>
 	<div class="news-title">here can be your advertisement</div>
 	<div class="news-container">
-		<div class="news-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-		<div class="news-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-		<div class="news-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-		<div class="news-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-		<div class="news-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+		{% for article in articles %}
+			<div class="news-item">{{article.description}}</div>
+		{% endfor %}
+
 	</div>
 </body>
 </html>

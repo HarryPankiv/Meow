@@ -5,7 +5,7 @@ class Article(models.Model):
     author = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
-    url = models.URLField(max_length=200)
+    url = models.URLField(max_length=200, unique=True)
     url_to_image = models.URLField(max_length=200)
     publish_date = models.DateTimeField(null=True)
 
