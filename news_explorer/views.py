@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render_to_response
 import urllib2
 from .models import Article
+from django.db import IntegrityError
 #from .forms import RoomForm
 from django.shortcuts import redirect
 from django.http import HttpResponse
@@ -24,18 +25,12 @@ def populate_db():
                           url=each_article['url'],
                           url_to_image=each_article['urlToImage'],
                           publish_date=each_article['publishedAt'])
-        """
         try:
             article.save()
-        except:
-            print article
-        """
-        article.save()
-
+        except IntegrityError:
+            pass
 
     return HttpResponse(status=200)
-
-
 
 
 

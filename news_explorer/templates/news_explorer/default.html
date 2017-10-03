@@ -39,145 +39,32 @@
 
 
 <div class="ui grid">
-    <div class="four wide column news-article">
-        <div class="ui raised link card">
-            <a class="content" href="https://www.google.com">
-                <div class="header">Cute Dog</div>
-                <div class="meta">
-                    <span class="category">Animals</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-
-                <div class="extra content">
-                    <div class="right floated author">
-                        CNN
+    {% for article in articles %}
+        <div class="four wide column news-article" >
+            <div class="ui raised link card">
+                <a class="content" href="{{ article.url }}"
+                   style="
+                           background-image: url('{{ article.url_to_image }}');
+                           background-size: 110%;">
+                    <div class="header">{{ article.title }}</div>
+                    <div class="meta">
+                        <span class="category">Category...</span>
                     </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="four wide column news-article">
-        <div class="ui raised link card">
-            <a class="content" href="https://www.google.com">
-                <div class="header">Cute Dog</div>
-                <div class="meta">
-                    <span class="category">Animals</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-
-                <div class="extra content">
-                    <div class="right floated author">
-                        CNN
+                    <!-- <img src="" /> -->
+                    <div class="description">
+                        <p>{{ article.description }}</p>
                     </div>
-                </div>
-            </a>
-        </div>
-    </div>
 
-    <div class="four wide column news-article">
-        <div class="ui raised link card">
-            <a class="content" href="https://www.google.com">
-                <div class="header">Cute Dog</div>
-                <div class="meta">
-                    <span class="category">Animals</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-
-                <div class="extra content">
-                    <div class="right floated author">
-                        CNN
+                    <div class="extra content">
+                        <div class="right floated author">
+                            {{ article.author }}
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
+    {% endfor %}
 
-    <div class="four wide column news-article">
-        <div class="ui raised link card">
-            <a class="content" href="https://www.google.com">
-                <div class="header">Cute Dog</div>
-                <div class="meta">
-                    <span class="category">Animals</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-
-                <div class="extra content">
-                    <div class="right floated author">
-                        CNN
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="four wide column news-article">
-        <div class="ui raised link card">
-            <a class="content" href="https://www.google.com">
-                <div class="header">Cute Dog</div>
-                <div class="meta">
-                    <span class="category">Animals</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-
-                <div class="extra content">
-                    <div class="right floated author">
-                        CNN
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="four wide column news-article">
-        <div class="ui raised link card">
-            <a class="content" href="https://www.google.com">
-                <div class="header">Cute Dog</div>
-                <div class="meta">
-                    <span class="category">Animals</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-
-                <div class="extra content">
-                    <div class="right floated author">
-                        CNN
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="four wide column news-article">
-        <div class="ui raised link card">
-            <a class="content" href="https://www.google.com">
-                <div class="header">Cute Dog</div>
-                <div class="meta">
-                    <span class="category">Animals</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-
-                <div class="extra content">
-                    <div class="right floated author">
-                        CNN
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
 </div>
 </body>
 </html>
